@@ -471,5 +471,11 @@ namespace AplicacionPuntoDeVenta
             FormUsers frm = new FormUsers();
             frm.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormMenu frm = new FormMenu();
+            frm.Show();
+        }
     }
 }
