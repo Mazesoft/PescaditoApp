@@ -47,16 +47,23 @@ namespace AplicacionPuntoDeVenta
             return encoding1.GetString(memStream.ToArray());
         }
 
-<<<<<<< HEAD
+
         public void metodoRenato()
         {
             //loooooooooooooooooooooollll
-=======
+        }
         public void Josue()
         {
             int x = 1;
 
->>>>>>> origin/master
+        }
+
+        public void anotherMethodRenato()
+        {
+            for (int i = 0; i < 58; i++)
+            {
+                
+            }
         }
     }
 }
