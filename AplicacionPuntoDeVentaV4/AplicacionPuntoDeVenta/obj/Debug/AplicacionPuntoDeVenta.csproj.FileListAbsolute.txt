@@ -101,3 +101,4 @@ C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\Aplicacion
 =======
 C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormMenu.resources
 >>>>>>> origin/master
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormMenu.resources

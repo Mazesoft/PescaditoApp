@@ -46,5 +46,11 @@ namespace AplicacionPuntoDeVenta
             Encoding encoding1 = Encoding.UTF8;
             return encoding1.GetString(memStream.ToArray());
         }
+
+        public void Josue()
+        {
+            int x = 1;
+
+        }
     }
 }
