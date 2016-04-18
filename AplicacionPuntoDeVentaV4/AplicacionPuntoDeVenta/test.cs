@@ -8,5 +8,9 @@ namespace AplicacionPuntoDeVenta
 {
     class test
     {
+        public void testmethod()
+        {
+
+        }
     }
 }
