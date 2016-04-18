@@ -84,3 +84,16 @@ C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\Pe
 C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\AplicacionPuntoDeVenta.exe.config
 C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.exe
 C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.pdb
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\AplicacionPuntoDeVenta.exe
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\AplicacionPuntoDeVenta.pdb
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\EntityFramework.dll
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\EntityFramework.xml
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.csprojResolveAssemblyReference.cache
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormActiveOrders.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormGenSearch.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormInventory.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormLogin.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormOrders.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormUsers.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.Properties.Resources.resources
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.csproj.GenerateResource.Cache

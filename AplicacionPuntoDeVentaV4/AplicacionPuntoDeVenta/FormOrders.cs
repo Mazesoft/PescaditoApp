@@ -236,7 +236,10 @@ namespace AplicacionPuntoDeVenta
                 lblDivision2.Visible = true;
 
                 Label label = new Label();
-                label.Text = "Pago Parcial";
+                if (AuxPartial.Count >  0)
+                    label.Text = "Pago Parcial";
+                else
+                    label.Text = "Pago Total";
                 label.Left = 20;
                 label.Top = 90 + ordersHeight + 49 + (35 * AuxPartial.Count);
                 label.Width = 100;
