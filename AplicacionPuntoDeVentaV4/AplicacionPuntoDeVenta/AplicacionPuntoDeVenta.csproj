@@ -132,6 +132,7 @@
     <Compile Include="sysdiagram.cs">
       <DependentUpon>ModelPescadito.tt</DependentUpon>
     </Compile>
+    <Compile Include="test.cs" />
     <Compile Include="User.cs">
       <DependentUpon>ModelPescadito.tt</DependentUpon>
     </Compile>
