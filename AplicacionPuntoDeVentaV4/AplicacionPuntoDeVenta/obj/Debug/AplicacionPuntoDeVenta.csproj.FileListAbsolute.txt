@@ -81,3 +81,6 @@ C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\Pe
 C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.FormUsers.resources
 C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.Properties.Resources.resources
 C:\Users\Renato Wong\Dropbox\MAZESOFT\Proyectos\El Pescadito\GitHub\Pescadito\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.csproj.GenerateResource.Cache
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\bin\Debug\AplicacionPuntoDeVenta.exe.config
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.exe
+C:\Users\Josue\Documents\GitHub\PescaditoApp\AplicacionPuntoDeVentaV4\AplicacionPuntoDeVenta\obj\Debug\AplicacionPuntoDeVenta.pdb
