@@ -242,5 +242,30 @@ namespace AplicacionPuntoDeVenta
             rdr.Close();
             conn.Close();
         }
+
+        public void BindComboTipoMenu(ComboBox cb)
+        {
+            conn.Open();
+            Dictionary<int, string> DicCb= new Dictionary<int, string>();
+            SqlCommand cmd = new SqlCommand("select * from MenuTipo", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                DicCb.Add(Convert.ToInt16(rdr[0].ToString()), rdr[1].ToString());
+            }
+            cb.DataSource = new BindingSource(DicCb, null);
+            cb.DisplayMember = "Value";
+            cb.ValueMember = "Key";
+            rdr.Close();
+            conn.Close();
+        }
+
+        public void InsertNewMenuItem(string idTipo, string Desc, string Price)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_InsertMenu " + idTipo + ", '" + Desc + "', " + Price, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
