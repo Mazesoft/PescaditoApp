@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eda3aecf6e8944bdbd89ef2a909d7725" Name="Diagram1">
+        <EntityTypeShape EntityType="PescaditoDBModel.InvCantidadPorTaco" Width="1.5" PointX="0.75" PointY="1.5" />
+        <EntityTypeShape EntityType="PescaditoDBModel.InvInventario" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="PescaditoDBModel.InvProducto" Width="1.5" PointX="0.75" PointY="4.625" />
+        <EntityTypeShape EntityType="PescaditoDBModel.InvUnidadMed" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="PescaditoDBModel.Menu" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PescaditoDBModel.Order" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="PescaditoDBModel.OrderDetail" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="PescaditoDBModel.sysdiagram" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="PescaditoDBModel.User" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="PescaditoDBModel.UsersType" Width="1.5" PointX="7.75" PointY="0.75" />
+        <AssociationConnector Association="PescaditoDBModel.FK_Inventario_CantidadPorTaco" />
+        <AssociationConnector Association="PescaditoDBModel.FK_Inventario_Productos" />
+        <AssociationConnector Association="PescaditoDBModel.FK_Inventario_UnidadMed" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
