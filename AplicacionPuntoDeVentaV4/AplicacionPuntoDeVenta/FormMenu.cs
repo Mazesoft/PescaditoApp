@@ -32,11 +32,29 @@ namespace AplicacionPuntoDeVenta
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            SQL.InsertNewMenuItem(cbUnidadID.ToString(), txtDesc.Text, txtPrecio.Text);
-            SQL.BindGridMenu(dgvMenu);
-            txtDesc.ResetText();
-            txtPrecio.ResetText();
-            cbTipo.SelectedIndex = 0;
+            if (btnGuardar.Text == "Guardar")
+            {
+                SQL.InsertNewMenuItem(cbUnidadID.ToString(), txtDesc.Text, txtPrecio.Text);
+                SQL.BindGridMenu(dgvMenu);
+                txtDesc.ResetText();
+                txtPrecio.ResetText();
+                cbTipo.SelectedIndex = 0;
+            }
+
+            if (btnGuardar.Text == "Actualizar")
+            {
+                if (SQL.UpdateMenuItem(MenuID, txtDesc.Text, cbUnidadID.ToString(), txtPrecio.Text))
+                {
+                    SQL.BindGridMenu(dgvMenu);
+                    txtDesc.ResetText();
+                    txtPrecio.ResetText();
+                    cbTipo.SelectedIndex = 0;
+                }
+                else
+                {
+                    MessageBox.Show("Se ha generado un error no identificado al tratar de guardar la nueva entrada en el Menú.");
+                }
+            }
         }
 
         private void dgvMenu_CellContentClick(object sender, DataGridViewCellEventArgs e)

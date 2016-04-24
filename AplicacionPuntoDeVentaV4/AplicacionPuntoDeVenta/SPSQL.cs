@@ -53,6 +53,26 @@ namespace AplicacionPuntoDeVenta
             }
         }
 
+        public bool UpdateMenuItem(string MenuID, string Desc, string TipoID, string Precio)
+        {
+            conn.Open();
+            SqlTransaction trans = conn.BeginTransaction("InvTrans");
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UpdateMenuItem " + MenuID + ", '" + Desc + "', " + TipoID + ", " + Precio, conn, trans);
+                cmd.ExecuteNonQuery();
+                trans.Commit();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                trans.Rollback();
+                conn.Close();
+                return false;
+            }
+        }
+
         public void BindComboUnidad(ComboBox cb)
         {
             conn.Open();
