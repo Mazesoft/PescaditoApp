@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMeals = new System.Windows.Forms.Panel();
+            this.txtDesc = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.cbTipo = new System.Windows.Forms.ComboBox();
@@ -38,17 +39,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtDesc = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMenu = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.IdInv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
             this.panelMeals.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,6 +73,14 @@
             this.panelMeals.Name = "panelMeals";
             this.panelMeals.Size = new System.Drawing.Size(646, 113);
             this.panelMeals.TabIndex = 2;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(51, 71);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(175, 25);
+            this.txtDesc.TabIndex = 10;
             // 
             // btnGuardar
             // 
@@ -156,15 +164,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Modificar Menú";
             // 
-            // txtDesc
-            // 
-            this.txtDesc.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(51, 71);
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(175, 25);
-            this.txtDesc.TabIndex = 10;
-            this.txtDesc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -208,27 +207,7 @@
             this.dgvMenu.ReadOnly = true;
             this.dgvMenu.Size = new System.Drawing.Size(646, 291);
             this.dgvMenu.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
-            this.panel4.Controls.Add(this.label14);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(646, 34);
-            this.panel4.TabIndex = 0;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label14.Location = new System.Drawing.Point(3, 7);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(123, 24);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Menú Actual";
+            this.dgvMenu.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenu_CellContentClick);
             // 
             // btnActualizar
             // 
@@ -271,6 +250,27 @@
             this.PrecioUnitario.HeaderText = "Precio Unitario";
             this.PrecioUnitario.Name = "PrecioUnitario";
             this.PrecioUnitario.ReadOnly = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.panel4.Controls.Add(this.label14);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(646, 34);
+            this.panel4.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label14.Location = new System.Drawing.Point(3, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(123, 24);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Menú Actual";
             // 
             // FormMenu
             // 

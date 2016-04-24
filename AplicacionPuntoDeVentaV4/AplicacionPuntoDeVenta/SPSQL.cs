@@ -133,6 +133,14 @@ namespace AplicacionPuntoDeVenta
             conn.Close();
         }
 
+        public void BorrarEntradaMenu(string ID)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("delete from Menu where IdMenu = " + ID, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public string GetPrecioXTaco(string InvID)
         {
             string PrecioXTaco;
@@ -265,6 +273,26 @@ namespace AplicacionPuntoDeVenta
             conn.Open();
             SqlCommand cmd = new SqlCommand("SP_InsertMenu " + idTipo + ", '" + Desc + "', " + Price, conn);
             cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void BindGridMenu(DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+            int r = 0;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_BindGridMenu", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                dgv.Rows.Add();
+                for (int c = 2; c < dgv.ColumnCount; c++)
+                {
+                    dgv[c, r].Value = rdr[c - 2].ToString();
+                }
+                r++;
+            }
+            rdr.Close();
             conn.Close();
         }
     }
