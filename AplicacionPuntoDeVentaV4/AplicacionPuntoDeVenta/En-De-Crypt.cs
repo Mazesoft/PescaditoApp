@@ -46,36 +46,5 @@ namespace AplicacionPuntoDeVenta
             Encoding encoding1 = Encoding.UTF8;
             return encoding1.GetString(memStream.ToArray());
         }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
-        public void metodoRenato()
-        {
-            //loooooooooooooooooooooollll
-        }
-<<<<<<< HEAD
-
-        public void Josue()
-        {
-            int x = 1;
-            int y = 2;
-            int z = 3;
-=======
-        public void Josue()
-        {
-            int x = 1;
-
-        }
-
-        public void anotherMethodRenato()
-        {
-            for (int i = 0; i < 58; i++)
-            {
-                
-            }
->>>>>>> origin/master
-        }
     }
 }
