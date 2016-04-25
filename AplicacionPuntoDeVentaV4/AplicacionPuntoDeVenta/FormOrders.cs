@@ -200,6 +200,7 @@ namespace AplicacionPuntoDeVenta
                 lblParcial.Location = new Point(3, 62 + ordersHeight);
                 lblParcial.Visible = true;
 
+                double amountTotal = amount;
                 amount = 0;
                 for (int i = 0; i < AuxPartial.Count; i++)
                 {
@@ -247,7 +248,10 @@ namespace AplicacionPuntoDeVenta
                 panelOrder.Controls.Add(label);
 
                 Label label2 = new Label();
-                label2.Text = "$ " + amount.ToString("N");
+                if (AuxPartial.Count > 0)
+                    label2.Text = "$ " + amount.ToString("N");
+                else
+                    label2.Text = "$ " + amountTotal.ToString("N");
                 label2.Left = 125;
                 label2.Top = 85 + ordersHeight + 49 + (35 * AuxPartial.Count);
                 label2.Font = new Font("Arial", 16, FontStyle.Regular);
@@ -354,52 +358,79 @@ namespace AplicacionPuntoDeVenta
             {
                 if (AuxPay == true)
                 {
-                    bool found = false;
-                    for (int i = 0; i < FormOrders.partial.Count; i++)
+                    if (button.Top < lblParcial.Top)
                     {
-                        OrderDetail ord = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
-
-                        if (FormOrders.partial[i].IdMenu == ord.IdMenu)
+                        bool found = false;
+                        for (int i = 0; i < FormOrders.partial.Count; i++)
                         {
-                            FormOrders.partial[i].Amount = (FormOrders.partial[i].Amount / FormOrders.partial[i].Qty) * (FormOrders.partial[i].Qty + 1);
-                            FormOrders.partial[i].Qty++;
-                            found = true;
+                            OrderDetail ord = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
+
+                            if (FormOrders.partial[i].IdMenu == ord.IdMenu)
+                            {
+                                FormOrders.partial[i].Amount = (FormOrders.partial[i].Amount / FormOrders.partial[i].Qty) * (FormOrders.partial[i].Qty + 1);
+                                FormOrders.partial[i].Qty++;
+                                found = true;
+                            }
                         }
-                    }
 
-                    if (found == false)
-                    {
-                        OrderDetail neworder = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
-                        FormOrders.partial.Add(new OrderDetail
+                        if (found == false)
                         {
-                            IdOrderDetail = neworder.IdOrderDetail,
-                            IdMenu = neworder.IdMenu,
-                            Qty = 1,
-                            Amount = neworder.Amount / neworder.Qty
-                        });
+                            OrderDetail neworder = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
+                            FormOrders.partial.Add(new OrderDetail
+                            {
+                                IdOrderDetail = neworder.IdOrderDetail,
+                                IdMenu = neworder.IdMenu,
+                                Qty = 1,
+                                Amount = neworder.Amount / neworder.Qty
+                            });
+                        }
+                        Form1_Load(null, null);
                     }
-                    Form1_Load(null, null);
                 }
             }
             else
             {
                 if (button.Text == "X")
                 {
-                    OrderDetail orderdet = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
+                    if (button.Top < lblParcial.Top)
+                    {
+                        OrderDetail orderdet = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
 
-                    objLINQ.UpdateOrderDetail(
-                                    new OrderDetail
-                                    {
-                                        IdOrderDetail = orderdet.IdOrderDetail,
-                                        IdOrder = NewOrder.IdOrder,
-                                        IdMenu = orderdet.IdMenu,
-                                        Qty = orderdet.Qty,
-                                        Amount = orderdet.Amount
-                                    }, false);
+                        objLINQ.UpdateOrderDetail(
+                                        new OrderDetail
+                                        {
+                                            IdOrderDetail = orderdet.IdOrderDetail,
+                                            IdOrder = NewOrder.IdOrder,
+                                            IdMenu = orderdet.IdMenu,
+                                            Qty = orderdet.Qty,
+                                            Amount = orderdet.Amount
+                                        }, false);
 
 
 
-                    Form1_Load(null, null);
+                        Form1_Load(null, null);
+                    }
+                    else
+                    {
+                        OrderDetail orderdet = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
+                        for (int i = 0; i < FormOrders.partial.Count; i++)
+                        {
+                            if (orderdet.IdMenu == FormOrders.partial[i].IdMenu)
+                            {
+                                if (FormOrders.partial[i].Qty > 1)
+                                {
+                                    FormOrders.partial[i].Amount = (FormOrders.partial[i].Amount / FormOrders.partial[i].Qty) * (FormOrders.partial[i].Qty - 1);
+                                    FormOrders.partial[i].Qty--;
+                                    Form1_Load(null, null);
+                                }
+                                else
+                                {
+                                    FormOrders.partial.RemoveAt(i);
+                                    Form1_Load(null, null);
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
