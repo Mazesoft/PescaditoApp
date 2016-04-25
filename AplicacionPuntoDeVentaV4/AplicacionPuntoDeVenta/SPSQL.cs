@@ -53,6 +53,26 @@ namespace AplicacionPuntoDeVenta
             }
         }
 
+        public bool UpdateMenuItem(string MenuID, string Desc, string TipoID, string Precio)
+        {
+            conn.Open();
+            SqlTransaction trans = conn.BeginTransaction("InvTrans");
+            try
+            {
+                SqlCommand cmd = new SqlCommand("SP_UpdateMenuItem " + MenuID + ", '" + Desc + "', " + TipoID + ", " + Precio, conn, trans);
+                cmd.ExecuteNonQuery();
+                trans.Commit();
+                conn.Close();
+                return true;
+            }
+            catch
+            {
+                trans.Rollback();
+                conn.Close();
+                return false;
+            }
+        }
+
         public void BindComboUnidad(ComboBox cb)
         {
             conn.Open();
@@ -129,6 +149,14 @@ namespace AplicacionPuntoDeVenta
         {
             conn.Open();
             SqlCommand cmd = new SqlCommand("delete from InvInventario where IdInventario = " + ID, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void BorrarEntradaMenu(string ID)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("delete from Menu where IdMenu = " + ID, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -265,6 +293,26 @@ namespace AplicacionPuntoDeVenta
             conn.Open();
             SqlCommand cmd = new SqlCommand("SP_InsertMenu " + idTipo + ", '" + Desc + "', " + Price, conn);
             cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void BindGridMenu(DataGridView dgv)
+        {
+            dgv.Rows.Clear();
+            int r = 0;
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("SP_BindGridMenu", conn);
+            SqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                dgv.Rows.Add();
+                for (int c = 2; c < dgv.ColumnCount; c++)
+                {
+                    dgv[c, r].Value = rdr[c - 2].ToString();
+                }
+                r++;
+            }
+            rdr.Close();
             conn.Close();
         }
     }
