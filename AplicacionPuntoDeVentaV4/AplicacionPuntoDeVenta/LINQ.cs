@@ -211,6 +211,46 @@ namespace AplicacionPuntoDeVenta
             return order.IdOrder;            
         }
 
+        public int CreatePartialOrder(int IdParent)
+        {
+            Order order =
+                new Order
+                {
+                    IdUser = 1,
+                    IdPromo = 0,
+                    ClientName = "josue",
+                    Qty = 0,
+                    FinalAmount = 0,
+                    dDateTime = DateTime.Now,
+                    OrderNum = GetNextOrderNum(),
+                    IdParent = IdParent,
+                    bActive = false
+                };
+
+            entity.Orders.Add(order);
+            entity.SaveChanges();
+
+            return order.IdOrder;
+        }
+
+        public void DeleteItemsFromOrder(int IdOrder)
+        {
+            List<OrderDetail> list = new List<OrderDetail>();
+            var collection = from a in entity.OrderDetails
+                             where a.IdOrder == IdOrder
+                             select a;
+
+            foreach (var item in collection)
+            {
+                list.Add((OrderDetail)item);
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                entity.OrderDetails.Remove(list[i]);
+            }
+        }
+
         public int InsertOrderDetail(OrderDetail order)
         {
             entity.OrderDetails.Add(order);

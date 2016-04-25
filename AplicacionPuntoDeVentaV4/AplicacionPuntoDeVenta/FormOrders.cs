@@ -351,7 +351,52 @@ namespace AplicacionPuntoDeVenta
                 objLINQ.UpdateOrderStatus(ActualIdOrder, true);
                 objLINQ.CreateOrder();
                 ActualIdOrder = 0;
-                FormOrders.formorder.Form1_Load(null, null);
+                Form1_Load(null, null);
+            }
+
+            if (button.Text == "Imprimir Recibo")
+            {
+                if (AuxPartial.Count >  0)
+                {
+                    objLINQ.DeleteItemsFromOrder(ActualIdOrder);
+
+                    for (int i = 0; i < listOrderDetails.Count; i++)
+                    {
+                        int contParcial = 0;
+                        for (int j = 0; j < AuxPartial.Count; j++)
+                        {
+                            if (AuxPartial[j].IdOrderDetail == listOrderDetails[i].IdOrderDetail)
+                                contParcial = AuxPartial[j].Qty;
+                        }
+
+                        if (listOrderDetails[i].Qty - contParcial > 0)
+                        {
+                            objLINQ.InsertOrderDetail(listOrderDetails[i]);
+                        }
+                    }
+
+
+                    int partial = objLINQ.CreatePartialOrder(ActualIdOrder);
+
+                    for (int i = 0; i < AuxPartial.Count; i++)
+                    {
+                        AuxPartial[i].IdOrder = partial;
+                        objLINQ.InsertOrderDetail(AuxPartial[i]);
+                    }
+
+                    AuxPartial = new List<OrderDetail>();
+                    ////////////////////////Print ticket
+                    Form1_Load(null, null);
+                }
+                else
+                {
+                    objLINQ.UpdateOrderStatus(ActualIdOrder, false);
+                    objLINQ.CreateOrder();
+                    ActualIdOrder = 0;
+
+                    ////////////////////////Print ticket
+                    Form1_Load(null, null);
+                }
             }
 
             if (button.Text.Contains("|"))
