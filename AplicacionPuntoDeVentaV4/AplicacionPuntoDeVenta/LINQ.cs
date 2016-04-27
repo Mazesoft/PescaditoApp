@@ -248,6 +248,7 @@ namespace AplicacionPuntoDeVenta
             for (int i = 0; i < list.Count; i++)
             {
                 entity.OrderDetails.Remove(list[i]);
+                entity.SaveChanges();
             }
         }
 
