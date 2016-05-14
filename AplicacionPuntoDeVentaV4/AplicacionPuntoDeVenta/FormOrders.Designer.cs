@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.panelMeals = new System.Windows.Forms.Panel();
+            this.listViewMenu = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menu1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelDrinks = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,10 +46,6 @@
             this.lblDivision = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblOrderNum = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panelMeals.SuspendLayout();
             this.panel3.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -58,12 +58,25 @@
             // panelMeals
             // 
             this.panelMeals.BackColor = System.Drawing.Color.White;
+            this.panelMeals.Controls.Add(this.listViewMenu);
             this.panelMeals.Controls.Add(this.panel3);
             this.panelMeals.Location = new System.Drawing.Point(16, 46);
-            this.panelMeals.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMeals.Margin = new System.Windows.Forms.Padding(4);
             this.panelMeals.Name = "panelMeals";
             this.panelMeals.Size = new System.Drawing.Size(417, 396);
             this.panelMeals.TabIndex = 0;
+            // 
+            // listViewMenu
+            // 
+            this.listViewMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewMenu.GridLines = true;
+            this.listViewMenu.Location = new System.Drawing.Point(50, 94);
+            this.listViewMenu.Name = "listViewMenu";
+            this.listViewMenu.Size = new System.Drawing.Size(325, 232);
+            this.listViewMenu.TabIndex = 1;
+            this.listViewMenu.UseCompatibleStateImageBehavior = false;
+            this.listViewMenu.View = System.Windows.Forms.View.List;
+            this.listViewMenu.Visible = false;
             // 
             // panel3
             // 
@@ -71,7 +84,7 @@
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(417, 42);
             this.panel3.TabIndex = 0;
@@ -91,30 +104,54 @@
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
-            this.menuStrip1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menu1ToolStripMenuItem});
+            this.menu1ToolStripMenuItem,
+            this.inventarioToolStripMenuItem,
+            this.usuariosToolStripMenuItem,
+            this.editarMenuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1282, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(1282, 43);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // menu1ToolStripMenuItem
             // 
             this.menu1ToolStripMenuItem.Name = "menu1ToolStripMenuItem";
-            this.menu1ToolStripMenuItem.Size = new System.Drawing.Size(87, 27);
-            this.menu1ToolStripMenuItem.Text = "Menu 1";
+            this.menu1ToolStripMenuItem.Size = new System.Drawing.Size(242, 39);
+            this.menu1ToolStripMenuItem.Text = "Ordenes Activas";
             this.menu1ToolStripMenuItem.Click += new System.EventHandler(this.menu1ToolStripMenuItem_Click);
+            // 
+            // inventarioToolStripMenuItem
+            // 
+            this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
+            this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(156, 39);
+            this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
+            // 
+            // usuariosToolStripMenuItem
+            // 
+            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(145, 39);
+            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
+            // 
+            // editarMenuToolStripMenuItem
+            // 
+            this.editarMenuToolStripMenuItem.Name = "editarMenuToolStripMenuItem";
+            this.editarMenuToolStripMenuItem.Size = new System.Drawing.Size(188, 39);
+            this.editarMenuToolStripMenuItem.Text = "Editar Menu";
+            this.editarMenuToolStripMenuItem.Click += new System.EventHandler(this.editarMenuToolStripMenuItem_Click);
             // 
             // panelDrinks
             // 
             this.panelDrinks.BackColor = System.Drawing.Color.White;
             this.panelDrinks.Controls.Add(this.panel2);
             this.panelDrinks.Location = new System.Drawing.Point(16, 462);
-            this.panelDrinks.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelDrinks.Margin = new System.Windows.Forms.Padding(4);
             this.panelDrinks.Name = "panelDrinks";
             this.panelDrinks.Size = new System.Drawing.Size(417, 134);
             this.panelDrinks.TabIndex = 1;
@@ -125,7 +162,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(417, 42);
             this.panel2.TabIndex = 0;
@@ -150,7 +187,7 @@
             this.panelOrder.Controls.Add(this.lblDivision);
             this.panelOrder.Controls.Add(this.panel4);
             this.panelOrder.Location = new System.Drawing.Point(456, 46);
-            this.panelOrder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelOrder.Margin = new System.Windows.Forms.Padding(4);
             this.panelOrder.Name = "panelOrder";
             this.panelOrder.Size = new System.Drawing.Size(417, 286);
             this.panelOrder.TabIndex = 2;
@@ -195,7 +232,7 @@
             this.panel4.Controls.Add(this.lblOrderNum);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(417, 42);
             this.panel4.TabIndex = 0;
@@ -212,50 +249,6 @@
             this.lblOrderNum.TabIndex = 0;
             this.lblOrderNum.Text = "Orden";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(781, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Ordenes";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(673, 0);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Inventario";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(565, 0);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(100, 28);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Usuarios";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(457, 0);
-            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(100, 28);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Menu edit";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
             // FormOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,16 +256,12 @@
             this.AutoScroll = true;
             this.BackgroundImage = global::AplicacionPuntoDeVenta.Properties.Resources._374296;
             this.ClientSize = new System.Drawing.Size(1282, 705);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.panelOrder);
             this.Controls.Add(this.panelDrinks);
             this.Controls.Add(this.panelMeals);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orden";
@@ -309,12 +298,12 @@
         private System.Windows.Forms.Label lblOrderNum;
         private System.Windows.Forms.ToolStripMenuItem menu1ToolStripMenuItem;
         private System.Windows.Forms.Label lblDivision;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblDivision2;
         private System.Windows.Forms.Label lblParcial;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListView listViewMenu;
+        private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editarMenuToolStripMenuItem;
     }
 }
 

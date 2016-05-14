@@ -58,6 +58,7 @@ namespace AplicacionPuntoDeVenta
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            menuStrip1.ForeColor = Color.White;
             //AuxPay = true;
 
             if (ctrls != null)
@@ -278,6 +279,15 @@ namespace AplicacionPuntoDeVenta
             ///////////////////////////////////////////////////////
             listComidas = objLINQ.SelectMenu(1);
             listBebidas = objLINQ.SelectMenu(2);
+
+            for (int i = 0; i < listComidas.Count; i++)
+            {
+                ListViewItem lvItem = new ListViewItem();
+                lvItem.SubItems[0].Text = listComidas[i].Description;
+                lvItem.SubItems.Add(listComidas[i].Description);
+                listViewMenu.Items.Add(lvItem);
+            }
+
             int cont = 0;
 
             int RowsMeals = 0;
@@ -520,7 +530,8 @@ namespace AplicacionPuntoDeVenta
 
         private void menu1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormActiveOrders frm = new FormActiveOrders();
+            frm.ShowDialog();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -528,30 +539,24 @@ namespace AplicacionPuntoDeVenta
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FormActiveOrders frm = new FormActiveOrders();
-            frm.ShowDialog();
-        }
-
         private void FormOrders_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormInventory frm = new FormInventory();
             frm.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormUsers frm = new FormUsers();
             frm.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void editarMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormMenu frm = new FormMenu();
             frm.Show();
