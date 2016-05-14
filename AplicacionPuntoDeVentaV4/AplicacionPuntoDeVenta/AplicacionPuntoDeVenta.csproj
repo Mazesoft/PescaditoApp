@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElPescadito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElPescadito.Designer.cs">
+      <DependentUpon>ElPescadito.cs</DependentUpon>
+    </Compile>
     <Compile Include="En-De-Crypt.cs" />
     <Compile Include="FormActiveOrders.cs">
       <SubType>Form</SubType>
@@ -144,6 +150,9 @@
     <Compile Include="UsersType.cs">
       <DependentUpon>ModelPescadito.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ElPescadito.resx">
+      <DependentUpon>ElPescadito.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormActiveOrders.resx">
       <DependentUpon>FormActiveOrders.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -174,6 +183,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="ModelPescadito.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -211,8 +221,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\374296.jpg" />
     <Content Include="Resources\icon_delete.png" />
     <Content Include="Resources\icon_Save.png" />
+    <None Include="Resources\intropescadito.png" />
     <Content Include="Resources\search-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
