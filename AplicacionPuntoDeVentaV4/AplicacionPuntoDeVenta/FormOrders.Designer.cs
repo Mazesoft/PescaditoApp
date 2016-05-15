@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panelMeals = new System.Windows.Forms.Panel();
-            this.listViewMenu = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -58,52 +57,39 @@
             // panelMeals
             // 
             this.panelMeals.BackColor = System.Drawing.Color.White;
-            this.panelMeals.Controls.Add(this.listViewMenu);
             this.panelMeals.Controls.Add(this.panel3);
-            this.panelMeals.Location = new System.Drawing.Point(16, 46);
+            this.panelMeals.Location = new System.Drawing.Point(52, 83);
             this.panelMeals.Margin = new System.Windows.Forms.Padding(4);
             this.panelMeals.Name = "panelMeals";
-            this.panelMeals.Size = new System.Drawing.Size(417, 396);
+            this.panelMeals.Size = new System.Drawing.Size(515, 396);
             this.panelMeals.TabIndex = 0;
-            // 
-            // listViewMenu
-            // 
-            this.listViewMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listViewMenu.GridLines = true;
-            this.listViewMenu.Location = new System.Drawing.Point(50, 94);
-            this.listViewMenu.Name = "listViewMenu";
-            this.listViewMenu.Size = new System.Drawing.Size(325, 232);
-            this.listViewMenu.TabIndex = 1;
-            this.listViewMenu.UseCompatibleStateImageBehavior = false;
-            this.listViewMenu.View = System.Windows.Forms.View.List;
-            this.listViewMenu.Visible = false;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(417, 42);
+            this.panel3.Size = new System.Drawing.Size(515, 42);
             this.panel3.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 32);
+            this.label1.Size = new System.Drawing.Size(118, 35);
             this.label1.TabIndex = 0;
             this.label1.Text = "Platillos";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.menuStrip1.BackColor = System.Drawing.Color.SteelBlue;
             this.menuStrip1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -150,32 +136,32 @@
             // 
             this.panelDrinks.BackColor = System.Drawing.Color.White;
             this.panelDrinks.Controls.Add(this.panel2);
-            this.panelDrinks.Location = new System.Drawing.Point(16, 462);
+            this.panelDrinks.Location = new System.Drawing.Point(52, 499);
             this.panelDrinks.Margin = new System.Windows.Forms.Padding(4);
             this.panelDrinks.Name = "panelDrinks";
-            this.panelDrinks.Size = new System.Drawing.Size(417, 134);
+            this.panelDrinks.Size = new System.Drawing.Size(515, 134);
             this.panelDrinks.TabIndex = 1;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.label2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(417, 42);
+            this.panel2.Size = new System.Drawing.Size(515, 42);
             this.panel2.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(4, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 32);
+            this.label2.Size = new System.Drawing.Size(123, 35);
             this.label2.TabIndex = 0;
             this.label2.Text = "Bebidas";
             // 
@@ -186,16 +172,16 @@
             this.panelOrder.Controls.Add(this.lblDivision2);
             this.panelOrder.Controls.Add(this.lblDivision);
             this.panelOrder.Controls.Add(this.panel4);
-            this.panelOrder.Location = new System.Drawing.Point(456, 46);
+            this.panelOrder.Location = new System.Drawing.Point(620, 83);
             this.panelOrder.Margin = new System.Windows.Forms.Padding(4);
             this.panelOrder.Name = "panelOrder";
-            this.panelOrder.Size = new System.Drawing.Size(417, 286);
+            this.panelOrder.Size = new System.Drawing.Size(515, 286);
             this.panelOrder.TabIndex = 2;
             // 
             // lblParcial
             // 
             this.lblParcial.AutoSize = true;
-            this.lblParcial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.lblParcial.BackColor = System.Drawing.Color.SteelBlue;
             this.lblParcial.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParcial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblParcial.Location = new System.Drawing.Point(17, 137);
@@ -208,44 +194,44 @@
             // 
             // lblDivision2
             // 
-            this.lblDivision2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.lblDivision2.BackColor = System.Drawing.Color.SteelBlue;
             this.lblDivision2.Location = new System.Drawing.Point(-7, 137);
             this.lblDivision2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDivision2.Name = "lblDivision2";
-            this.lblDivision2.Size = new System.Drawing.Size(429, 12);
+            this.lblDivision2.Size = new System.Drawing.Size(491, 10);
             this.lblDivision2.TabIndex = 2;
             this.lblDivision2.Visible = false;
             // 
             // lblDivision
             // 
-            this.lblDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
-            this.lblDivision.Location = new System.Drawing.Point(-4, 135);
+            this.lblDivision.BackColor = System.Drawing.Color.SteelBlue;
+            this.lblDivision.Location = new System.Drawing.Point(-4, 137);
             this.lblDivision.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDivision.Name = "lblDivision";
-            this.lblDivision.Size = new System.Drawing.Size(429, 12);
+            this.lblDivision.Size = new System.Drawing.Size(519, 10);
             this.lblDivision.TabIndex = 1;
             this.lblDivision.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(108)))), ((int)(((byte)(176)))));
+            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.lblOrderNum);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(417, 42);
+            this.panel4.Size = new System.Drawing.Size(515, 42);
             this.panel4.TabIndex = 0;
             // 
             // lblOrderNum
             // 
             this.lblOrderNum.AutoSize = true;
-            this.lblOrderNum.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOrderNum.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOrderNum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblOrderNum.Location = new System.Drawing.Point(4, 9);
             this.lblOrderNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOrderNum.Name = "lblOrderNum";
-            this.lblOrderNum.Size = new System.Drawing.Size(90, 32);
+            this.lblOrderNum.Size = new System.Drawing.Size(98, 35);
             this.lblOrderNum.TabIndex = 0;
             this.lblOrderNum.Text = "Orden";
             // 
@@ -300,7 +286,6 @@
         private System.Windows.Forms.Label lblDivision;
         private System.Windows.Forms.Label lblDivision2;
         private System.Windows.Forms.Label lblParcial;
-        private System.Windows.Forms.ListView listViewMenu;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarMenuToolStripMenuItem;

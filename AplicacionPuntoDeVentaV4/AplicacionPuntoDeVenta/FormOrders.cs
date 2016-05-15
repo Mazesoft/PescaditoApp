@@ -56,6 +56,8 @@ namespace AplicacionPuntoDeVenta
         List<OrderDetail> listOrderDetails = new List<OrderDetail>();
         List<Control> ctrls;
 
+        PescaditoDBEntities entity = new PescaditoDBEntities();
+
         public void Form1_Load(object sender, EventArgs e)
         {
             menuStrip1.ForeColor = Color.White;
@@ -123,10 +125,10 @@ namespace AplicacionPuntoDeVenta
                     //button2.Text = "1x  |  Tacotote";
                     button2.Text = (listOrderDetails[i].Qty - contParcial) + "x  |  " + objLINQ.GetMenuName(listOrderDetails[i].IdMenu);
                     button2.Left = 20;
-                    button2.Top = 50 + ((i - zeros) * 35);
-                    button2.Width = 240;
-                    button2.Height = 30;
-                    button2.Font = new Font("Arial", 12, FontStyle.Regular);
+                    button2.Top = 60 + ((i - zeros) * 55);
+                    button2.Width = 415;
+                    button2.Height = 45;
+                    button2.Font = new Font("Arial", 18, FontStyle.Regular);
                     button2.TextAlign = ContentAlignment.MiddleLeft;
                     button2.Click += new EventHandler(button_Click);
                     panelOrder.Controls.Add(button2);
@@ -134,11 +136,11 @@ namespace AplicacionPuntoDeVenta
                     Button button3 = new Button();
                     button3.Name = listOrderDetails[i].IdOrderDetail.ToString();
                     button3.Text = "X";
-                    button3.Left = 260;
-                    button3.Top = 50 + ((i - zeros) * 35);
-                    button3.Width = 35;
-                    button3.Height = 30;
-                    button3.Font = new Font("Arial", 12, FontStyle.Bold);
+                    button3.Left = 445;
+                    button3.Top = 60 + ((i - zeros) * 55);
+                    button3.Width = 50;
+                    button3.Height = 45;
+                    button3.Font = new Font("Arial", 18, FontStyle.Bold);
                     button3.ForeColor = Color.White;
                     button3.BackColor = Color.FromArgb(217, 83, 79);
                     button3.Click += new EventHandler(button_Click);
@@ -152,7 +154,7 @@ namespace AplicacionPuntoDeVenta
                 }
             }
 
-            int ordersHeight = 35 * (listOrderDetails.Count - zeros);
+            int ordersHeight = 55 * (listOrderDetails.Count - zeros) + 10;
 
             if (AuxPay != true)
             {
@@ -160,18 +162,21 @@ namespace AplicacionPuntoDeVenta
                 lblDivision.Location = new Point(-3, 60 + ordersHeight);
 
                 Label label = new Label();
-                label.Text = "Total";
+                label.Text = "Total:";
                 label.Left = 20;
                 label.Top = 90 + ordersHeight;
-                label.Width = 50;
-                label.Font = new Font("Arial", 12, FontStyle.Regular);
+                label.Width = 100;
+                label.Height = 50;
+                label.Font = new Font("Arial", 18, FontStyle.Regular);
                 panelOrder.Controls.Add(label);
 
                 Label label2 = new Label();
                 label2.Text = "$ " + amount.ToString("N");
-                label2.Left = 70;
+                label2.Width = 200;
+                label2.Height = 50;
+                label2.Left = 120;
                 label2.Top = 85 + ordersHeight;
-                label2.Font = new Font("Arial", 16, FontStyle.Regular);
+                label2.Font = new Font("Arial", 20, FontStyle.Regular);
                 panelOrder.Controls.Add(label2);
 
 
@@ -187,7 +192,7 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
-                panelOrder.Height = 1 * 45 + 125 + ordersHeight;
+                panelOrder.Height = 1 * 45 + 135 + ordersHeight;
 
                 lblParcial.Visible = false;
                 lblDivision2.Visible = false;
@@ -253,7 +258,7 @@ namespace AplicacionPuntoDeVenta
                     label2.Text = "$ " + amount.ToString("N");
                 else
                     label2.Text = "$ " + amountTotal.ToString("N");
-                label2.Left = 125;
+                label2.Left = 145;
                 label2.Top = 85 + ordersHeight + 49 + (35 * AuxPartial.Count);
                 label2.Font = new Font("Arial", 16, FontStyle.Regular);
                 panelOrder.Controls.Add(label2);
@@ -271,7 +276,7 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
-                panelOrder.Height = 1 * 45 + 125 + ordersHeight + 49 + (35 * AuxPartial.Count);
+                panelOrder.Height = 1 * 45 + 135 + ordersHeight + 49 + (35 * AuxPartial.Count);
 
             }
 
@@ -280,13 +285,13 @@ namespace AplicacionPuntoDeVenta
             listComidas = objLINQ.SelectMenu(1);
             listBebidas = objLINQ.SelectMenu(2);
 
-            for (int i = 0; i < listComidas.Count; i++)
-            {
-                ListViewItem lvItem = new ListViewItem();
-                lvItem.SubItems[0].Text = listComidas[i].Description;
-                lvItem.SubItems.Add(listComidas[i].Description);
-                listViewMenu.Items.Add(lvItem);
-            }
+            //for (int i = 0; i < listComidas.Count; i++)
+            //{
+            //    ListViewItem lvItem = new ListViewItem();
+            //    lvItem.SubItems[0].Text = listComidas[i].Description;
+            //    lvItem.SubItems.Add(listComidas[i].Description);
+            //    listViewMenu.Items.Add(lvItem);
+            //}
 
             int cont = 0;
 
@@ -308,11 +313,11 @@ namespace AplicacionPuntoDeVenta
                     Button button = new Button();
                     button.Name = listComidas[cont].IdMenu.ToString();
                     button.Text = listComidas[cont].Description.ToString();
-                    button.Left = 20 + column * 145;
-                    button.Top = 50 + row * 45;
-                    button.Width = 130;
-                    button.Height = 30;
-                    button.Font = new Font("Arial", 12, FontStyle.Regular);
+                    button.Left = 20 + column * 255;
+                    button.Top = 60 + row * 75;
+                    button.Width = 220;
+                    button.Height = 50;
+                    button.Font = new Font("Arial", 18, FontStyle.Regular);
                     button.Click += new EventHandler(button_Click);
                     panelMeals.Controls.Add(button);
 
@@ -322,8 +327,8 @@ namespace AplicacionPuntoDeVenta
                 if (cont == listComidas.Count) break;
             }
 
-            panelMeals.Height = RowsMeals * 45 + 50;
-            panelDrinks.Top = RowsMeals * 45 + 50 + 50;
+            panelMeals.Height = RowsMeals * 75 + 50;
+            panelDrinks.Top = RowsMeals * 75 + 80 + 80;
 
             cont = 0;
 
@@ -334,11 +339,11 @@ namespace AplicacionPuntoDeVenta
                     Button button = new Button();
                     button.Name = listBebidas[cont].IdMenu.ToString();
                     button.Text = listBebidas[cont].Description.ToString();
-                    button.Left = 20 + column * 145;
-                    button.Top = 50 + row * 45;
-                    button.Width = 130;
-                    button.Height = 30;
-                    button.Font = new Font("Arial", 12, FontStyle.Regular);
+                    button.Left = 20 + column * 255;
+                    button.Top = 60 + row * 75;
+                    button.Width = 220;
+                    button.Height = 50;
+                    button.Font = new Font("Arial", 18, FontStyle.Regular);
                     button.Click += new EventHandler(button_Click);
                     panelDrinks.Controls.Add(button);
 
@@ -348,7 +353,7 @@ namespace AplicacionPuntoDeVenta
                 if (cont == listBebidas.Count) break;
             }
 
-            panelDrinks.Height = RowsDrinks * 45 + 50;
+            panelDrinks.Height = RowsDrinks * 75 + 50;
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -451,19 +456,64 @@ namespace AplicacionPuntoDeVenta
                     {
                         OrderDetail orderdet = objLINQ.SelectMenuOrderDetailbyId(Convert.ToInt32(button.Name));
 
-                        objLINQ.UpdateOrderDetail(
-                                        new OrderDetail
-                                        {
-                                            IdOrderDetail = orderdet.IdOrderDetail,
-                                            IdOrder = NewOrder.IdOrder,
-                                            IdMenu = orderdet.IdMenu,
-                                            Qty = orderdet.Qty,
-                                            Amount = orderdet.Amount
-                                        }, false);
+                        OrderDetail result = (from a in entity.OrderDetails
+                                              where a.IdOrderDetail == orderdet.IdOrderDetail
+                                              select a).FirstOrDefault();
 
+                        if (result != null)
+                        {
 
+                            if (result.Qty - 1 <= 0)
+                            {
+                                entity.OrderDetails.Remove(result);
+                                entity.SaveChanges();
 
-                        Form1_Load(null, null);
+                                Form1_Load(null, null);
+                            }
+                            else
+                            {
+                                result.Amount = (result.Amount / result.Qty) * (result.Qty - 1);
+
+                                result.Qty = result.Qty - 1;
+                                entity.SaveChanges();
+
+                                objLINQ = new LINQ();
+                                listOrderDetails = objLINQ.SelectOrderDetails(NewOrder.IdOrder);
+
+                                double amount = 0;
+                                for (int i = 0; i < listOrderDetails.Count; i++)
+                                {
+                                    int contParcial = 0;
+                                    for (int j = 0; j < AuxPartial.Count; j++)
+                                    {
+                                        if (AuxPartial[j].IdOrderDetail == listOrderDetails[i].IdOrderDetail)
+                                            contParcial = AuxPartial[j].Qty;
+                                    }
+
+                                    if (listOrderDetails[i].Qty - contParcial > 0)
+                                    {
+                                        amount += Convert.ToDouble(listOrderDetails[i].Amount);
+                                    }
+                                }
+
+                                string name = objLINQ.GetMenuName(result.IdMenu);
+                                for (int j = 0; j < panelOrder.Controls.Count; j++)
+                                {
+                                    if (panelOrder.Controls[j].Text.Contains(name))
+                                    {
+                                        panelOrder.Controls[j].Text = (result.Qty) + "x  |  " + name;
+                                    }
+
+                                    if (panelOrder.Controls[j].Text.Contains("$"))
+                                    {
+                                        panelOrder.Controls[j].Text = "$ " + amount.ToString("N");
+                                    }
+                                }
+                            }
+
+                        }
+
+                        //Form1_Load(null, null);
                     }
                     else
                     {
@@ -476,7 +526,24 @@ namespace AplicacionPuntoDeVenta
                                 {
                                     FormOrders.partial[i].Amount = (FormOrders.partial[i].Amount / FormOrders.partial[i].Qty) * (FormOrders.partial[i].Qty - 1);
                                     FormOrders.partial[i].Qty--;
-                                    Form1_Load(null, null);
+
+                                    string name = objLINQ.GetMenuName(orderdet.IdMenu);
+                                    for (int j = 0; j < panelOrder.Controls.Count; j++)
+                                    {
+                                        if (panelOrder.Controls[j].Text.Contains(name))
+                                        {
+                                            panelOrder.Controls[j].Text = FormOrders.partial[j].Qty + "x  |  " + name;
+                                        }
+
+                                        if (panelOrder.Controls[j].Text.Contains("$"))
+                                        {
+                                            panelOrder.Controls[j].Text = "$ xx5xx";
+                                        }
+                                    }
+
+
+
+                                    //Form1_Load(null, null);
                                 }
                                 else
                                 {
@@ -505,6 +572,7 @@ namespace AplicacionPuntoDeVenta
                                         Qty = 1,
                                         Amount = listComidas[i].UnitPrice
                                     });
+                                Form1_Load(null, null);
                             }
                             else
                             {
@@ -517,11 +585,43 @@ namespace AplicacionPuntoDeVenta
                                         Qty = orderdet.Qty,
                                         Amount = orderdet.Amount
                                     }, true);
+
+                                listOrderDetails = objLINQ.SelectOrderDetails(NewOrder.IdOrder);
+
+                                double amount = 0;
+                                for (int j = 0; j < listOrderDetails.Count; j++)
+                                {
+                                    int contParcial = 0;
+                                    for (int k = 0; k < AuxPartial.Count; k++)
+                                    {
+                                        if (AuxPartial[k].IdOrderDetail == listOrderDetails[j].IdOrderDetail)
+                                            contParcial = AuxPartial[k].Qty;
+                                    }
+
+                                    if (listOrderDetails[j].Qty - contParcial > 0)
+                                    {
+                                        amount += Convert.ToDouble(listOrderDetails[j].Amount);
+                                    }
+                                }
+
+                                string name = objLINQ.GetMenuName(orderdet.IdMenu);
+                                for (int j = 0; j < panelOrder.Controls.Count; j++)
+                                {
+                                    if (panelOrder.Controls[j].Text.Contains(name))
+                                    {
+                                        panelOrder.Controls[j].Text = (orderdet.Qty) + "x  |  " + name;
+                                    }
+
+                                    if (panelOrder.Controls[j].Text.Contains("$"))
+                                    {
+                                        panelOrder.Controls[j].Text = "$ " + amount.ToString("N");
+                                    }
+                                }
                             }
 
 
 
-                            Form1_Load(null, null);
+                            //Form1_Load(null, null);
                         }
                     }
                 }
