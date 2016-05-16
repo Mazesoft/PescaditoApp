@@ -84,5 +84,15 @@ namespace AplicacionPuntoDeVenta
                 }
             }
         }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtDesc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

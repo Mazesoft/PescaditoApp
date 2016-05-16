@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
@@ -40,18 +39,6 @@
             this.panel3.SuspendLayout();
             this.panelMeals.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.Color.SteelBlue;
-            this.menuStrip1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(852, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // panel3
             // 
@@ -102,7 +89,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGray;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.button1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button1.Location = new System.Drawing.Point(261, 246);
@@ -147,7 +134,7 @@
             this.panelMeals.Controls.Add(this.txtPassword);
             this.panelMeals.Controls.Add(this.txtUser);
             this.panelMeals.Controls.Add(this.panel3);
-            this.panelMeals.Location = new System.Drawing.Point(68, 134);
+            this.panelMeals.Location = new System.Drawing.Point(235, 145);
             this.panelMeals.Margin = new System.Windows.Forms.Padding(4);
             this.panelMeals.Name = "panelMeals";
             this.panelMeals.Size = new System.Drawing.Size(711, 357);
@@ -161,9 +148,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(191)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::AplicacionPuntoDeVenta.Properties.Resources._374296;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(852, 705);
+            this.ClientSize = new System.Drawing.Size(1182, 705);
             this.Controls.Add(this.panelMeals);
-            this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -174,13 +160,10 @@
             this.panelMeals.ResumeLayout(false);
             this.panelMeals.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUser;

@@ -188,7 +188,7 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Width = 475;
                 btnFinish.Height = 60;
                 btnFinish.Font = new Font("Arial", 18, FontStyle.Regular);
-                btnFinish.BackColor = Color.LightGray;
+                btnFinish.FlatStyle = FlatStyle.System;
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
@@ -276,7 +276,7 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Width = 475;
                 btnFinish.Height = 60;
                 btnFinish.Font = new Font("Arial", 18, FontStyle.Regular);
-                btnFinish.BackColor = Color.LightGray;
+                btnFinish.FlatStyle = FlatStyle.System;
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
