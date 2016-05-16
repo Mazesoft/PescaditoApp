@@ -674,5 +674,11 @@ namespace AplicacionPuntoDeVenta
             FormMenu frm = new FormMenu();
             frm.Show();
         }
+
+        private void chefToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormChefView frm = new FormChefView();
+            frm.Show();
+        }
     }
 }
