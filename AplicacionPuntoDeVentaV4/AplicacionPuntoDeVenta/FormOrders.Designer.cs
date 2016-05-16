@@ -100,7 +100,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1282, 43);
+            this.menuStrip1.Size = new System.Drawing.Size(1187, 43);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -241,7 +241,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackgroundImage = global::AplicacionPuntoDeVenta.Properties.Resources._374296;
-            this.ClientSize = new System.Drawing.Size(1282, 705);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1187, 705);
             this.Controls.Add(this.panelOrder);
             this.Controls.Add(this.panelDrinks);
             this.Controls.Add(this.panelMeals);

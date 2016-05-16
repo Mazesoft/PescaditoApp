@@ -166,14 +166,14 @@ namespace AplicacionPuntoDeVenta
                 label.Left = 20;
                 label.Top = 90 + ordersHeight;
                 label.Width = 100;
-                label.Height = 50;
+                label.Height = 40;
                 label.Font = new Font("Arial", 18, FontStyle.Regular);
                 panelOrder.Controls.Add(label);
 
                 Label label2 = new Label();
                 label2.Text = "$ " + amount.ToString("N");
                 label2.Width = 200;
-                label2.Height = 50;
+                label2.Height = 40;
                 label2.Left = 120;
                 label2.Top = 85 + ordersHeight;
                 label2.Font = new Font("Arial", 20, FontStyle.Regular);
@@ -184,15 +184,15 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Name = "Save";
                 btnFinish.Text = "Guardar Orden";
                 btnFinish.Left = 20;
-                btnFinish.Top = 125 + ordersHeight;
-                btnFinish.Width = 275;
-                btnFinish.Height = 30;
-                btnFinish.Font = new Font("Arial", 12, FontStyle.Regular);
-                btnFinish.BackColor = Color.FromArgb(255, 255, 66);
+                btnFinish.Top = 145 + ordersHeight;
+                btnFinish.Width = 475;
+                btnFinish.Height = 60;
+                btnFinish.Font = new Font("Arial", 18, FontStyle.Regular);
+                btnFinish.BackColor = Color.LightGray;
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
-                panelOrder.Height = 1 * 45 + 135 + ordersHeight;
+                panelOrder.Height = 1 * 85 + 135 + ordersHeight;
 
                 lblParcial.Visible = false;
                 lblDivision2.Visible = false;
@@ -201,9 +201,10 @@ namespace AplicacionPuntoDeVenta
             else
             {
                 lblDivision.Location = new Point(-3, 60 + ordersHeight);
-                lblDivision.Height = 25;
+                lblDivision.Height = 30;
 
                 lblParcial.Location = new Point(3, 62 + ordersHeight);
+                lblDivision2.Width = 600;
                 lblParcial.Visible = true;
 
                 double amountTotal = amount;
@@ -244,13 +245,14 @@ namespace AplicacionPuntoDeVenta
 
                 Label label = new Label();
                 if (AuxPartial.Count >  0)
-                    label.Text = "Pago Parcial";
+                    label.Text = "Pago Parcial:";
                 else
-                    label.Text = "Pago Total";
+                    label.Text = "Pago Total:";
                 label.Left = 20;
+                label.Height = 40;
                 label.Top = 90 + ordersHeight + 49 + (35 * AuxPartial.Count);
-                label.Width = 100;
-                label.Font = new Font("Arial", 12, FontStyle.Regular);
+                label.Width = 200;
+                label.Font = new Font("Arial", 18, FontStyle.Regular);
                 panelOrder.Controls.Add(label);
 
                 Label label2 = new Label();
@@ -258,9 +260,11 @@ namespace AplicacionPuntoDeVenta
                     label2.Text = "$ " + amount.ToString("N");
                 else
                     label2.Text = "$ " + amountTotal.ToString("N");
-                label2.Left = 145;
+                label2.Left = 220;
+                label2.Height = 40;
+                label2.Width = 400;
                 label2.Top = 85 + ordersHeight + 49 + (35 * AuxPartial.Count);
-                label2.Font = new Font("Arial", 16, FontStyle.Regular);
+                label2.Font = new Font("Arial", 20, FontStyle.Regular);
                 panelOrder.Controls.Add(label2);
 
 
@@ -268,15 +272,15 @@ namespace AplicacionPuntoDeVenta
                 btnFinish.Name = "Print";
                 btnFinish.Text = "Imprimir Recibo";
                 btnFinish.Left = 20;
-                btnFinish.Top = 125 + ordersHeight + 49 + (35 * AuxPartial.Count);
-                btnFinish.Width = 275;
-                btnFinish.Height = 30;
-                btnFinish.Font = new Font("Arial", 12, FontStyle.Regular);
-                btnFinish.BackColor = Color.FromArgb(255, 255, 66);
+                btnFinish.Top = 140 + ordersHeight + 49 + (35 * AuxPartial.Count);
+                btnFinish.Width = 475;
+                btnFinish.Height = 60;
+                btnFinish.Font = new Font("Arial", 18, FontStyle.Regular);
+                btnFinish.BackColor = Color.LightGray;
                 btnFinish.Click += new EventHandler(button_Click);
                 panelOrder.Controls.Add(btnFinish);
 
-                panelOrder.Height = 1 * 45 + 135 + ordersHeight + 49 + (35 * AuxPartial.Count);
+                panelOrder.Height = 1 * 45 + 170 + ordersHeight + 49 + (35 * AuxPartial.Count);
 
             }
 
@@ -527,17 +531,26 @@ namespace AplicacionPuntoDeVenta
                                     FormOrders.partial[i].Amount = (FormOrders.partial[i].Amount / FormOrders.partial[i].Qty) * (FormOrders.partial[i].Qty - 1);
                                     FormOrders.partial[i].Qty--;
 
+                                    objLINQ = new LINQ();
+                                    listOrderDetails = objLINQ.SelectOrderDetails(NewOrder.IdOrder);
+
+                                    double amount = 0;
+                                    for (int j = 0; j < AuxPartial.Count; j++)
+                                    {
+                                        amount += Convert.ToDouble(AuxPartial[j].Amount);
+                                    }
+
                                     string name = objLINQ.GetMenuName(orderdet.IdMenu);
                                     for (int j = 0; j < panelOrder.Controls.Count; j++)
                                     {
                                         if (panelOrder.Controls[j].Text.Contains(name))
                                         {
-                                            panelOrder.Controls[j].Text = FormOrders.partial[j].Qty + "x  |  " + name;
+                                            panelOrder.Controls[j].Text = FormOrders.partial[i].Qty + "x  |  " + name;
                                         }
 
                                         if (panelOrder.Controls[j].Text.Contains("$"))
                                         {
-                                            panelOrder.Controls[j].Text = "$ xx5xx";
+                                            panelOrder.Controls[j].Text = "$ " + amount.ToString("N");
                                         }
                                     }
 
