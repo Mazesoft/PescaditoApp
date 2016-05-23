@@ -32,6 +32,7 @@ namespace AplicacionPuntoDeVenta
                 frm.Show();
 
                 this.Hide();
+                timer1.Enabled = false;
                 x++;
             }
             else x++;
