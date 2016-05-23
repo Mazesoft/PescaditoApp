@@ -315,5 +315,56 @@ namespace AplicacionPuntoDeVenta
             rdr.Close();
             conn.Close();
         }
+
+        public void GetChefView(Label lblOrdF, Label lblOrdS, Label lblOrdT, ListBox lbF, ListBox lbS, ListBox lbT)
+        {
+            lbF.Items.Clear(); lbS.Items.Clear(); lbT.Items.Clear();
+            List<int> ListOrderID = new List<int>();
+            conn.Open();
+            SqlCommand cmdT3 = new SqlCommand("GetChefTop3", conn);
+            SqlDataReader rdrT3 = cmdT3.ExecuteReader();
+            while (rdrT3.Read())
+            {
+                ListOrderID.Add(Convert.ToInt16(rdrT3[0].ToString()));
+            }
+            rdrT3.Close();
+
+            for (int x = 0; x < ListOrderID.Count; x++)
+            {
+                SqlCommand cmd = new SqlCommand("GetChefView " + ListOrderID[x].ToString(), conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    switch (x)
+                    {
+                        case 0:
+                            lblOrdF.Text = "Orden No " + rdr[1].ToString();
+                            lblOrdF.Tag = rdr[0].ToString();
+                            lbF.Items.Add(rdr[2].ToString() + "x  " + rdr[3].ToString());
+                            break;
+                        case 1:
+                            lblOrdS.Text = "Orden No " + rdr[1].ToString();
+                            lblOrdS.Tag = rdr[0].ToString();
+                            lbS.Items.Add(rdr[2].ToString() + "x  " + rdr[3].ToString());
+                            break;
+                        case 2:
+                            lblOrdT.Text = "Orden No " + rdr[1].ToString();
+                            lblOrdT.Tag = rdr[0].ToString();
+                            lbT.Items.Add(rdr[2].ToString() + "x  " + rdr[3].ToString());
+                            break;
+                    }
+                }
+                rdr.Close();
+            }
+            conn.Close();
+        }
+
+        public void FinishChefOrd(string OrderID)
+        {
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("update OrdChef set bActive = 0 where IdOrder = " + OrderID, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
